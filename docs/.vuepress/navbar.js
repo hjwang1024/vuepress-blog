@@ -186,12 +186,8 @@ module.exports = {
                     text: '说说',
                     children:[
                         {
-                            text: '说说1',
+                            text: 'chat',
                             link: '/mood'
-                        },
-                        {
-                            text: '说说2',
-                            link: '/next-mood'
                         }
                     ],
                 },
@@ -229,20 +225,20 @@ module.exports = {
             ],
         },
 
-        // {
-        //     text: '友情链接',
-        //     link: '/link',
-        //     iconClass: 'aurora-navbar-guide'
-        // },
-        // {
-        //     text: '案例',
-        //     link: '/use.html',
-        //     iconClass: 'aurora-navbar-si-glyph-load'
-        // },
-        // {
-        //     text: 'Aurora',
-        //     link: 'https://github.com/vuepress-aurora/vuepress-theme-aurora',
-        //     iconClass: 'aurora-navbar-github1'
-        // }
+        {
+            text: '友情链接',
+            link: '/link',
+            iconClass: 'aurora-navbar-guide'
+        },
+        {
+            text: '案例',
+            link: '/use.html',
+            iconClass: 'aurora-navbar-si-glyph-load'
+        },
+        {
+            text: 'Aurora',
+            link: 'https://github.com/vuepress-aurora/vuepress-theme-aurora',
+            iconClass: 'aurora-navbar-github1'
+        }
     ]
 }

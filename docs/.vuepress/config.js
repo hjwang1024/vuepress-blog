@@ -7,7 +7,7 @@ const {siteInformation} = require("./siteInformation");
 const {message} = require("./message");
 const {donate} = require("./donate");
 module.exports = {
-    //base: '/REPO/',//如果你准备发布到 https://<USERNAME>.github.io/<REPO>/ ，也就是说你的仓库地址是 https://github.com/<USERNAME>/<REPO> ，则将 base 设置为 "/<REPO>/"。
+    // base: '/REPO/',//如果你准备发布到 https://<USERNAME>.github.io/<REPO>/ ，也就是说你的仓库地址是 https://github.com/<USERNAME>/<REPO> ，则将 base 设置为 "/<REPO>/"。
 
     /*
     * 这里是配置Markdown语法增强的配置，如需配置，请查看官方介绍https://v2.vuepress.vuejs.org/zh/guide/markdown.html
@@ -44,12 +44,12 @@ module.exports = {
         * 这里是配置说说插件，使用https://aurora.xcye.xyz/plugin/coze/
         * */
         [
-            // "coze",
-            path.resolve(__dirname, "../../Aurora-plugin/vuepress-plugin-coze/lib/node/index.js"),
+            // path.resolve(__dirname, "../../Aurora-plugin/vuepress-plugin-coze/lib/node/index.js"),
+            "vuepress-plugin-coze",
             {
-                appId: '2A2Dyd2Affrnldhwftlaaa',//你需要在leancloud中创建自己的appId，请参照文档https://aurora.xcye.xyz/plugin/coze/
-                appKey: 'qHYTbb91iOPLelyC9aaa',
-                masterKey: 'eUwfvS3luIPnPiaaa',
+                appId: '2A2Dyd2AffrnldhwftlEddVn-MdYXbMMI',
+                appKey: 'qHYTbb91iOPLelyC9lpbXxLH',
+                masterKey: 'eUwfvS3luIPnPiHS5SpEhDYr',
                 //下面这些是可选的
                 avatarPath: '/avatar.jpg',//说说头像url
                 registerPath: '/register', //自定义插件默认提供的注册页面路由，请在前面加上/
@@ -61,8 +61,8 @@ module.exports = {
         * 请配置一下excludes，否则在时间轴那里，会出现非文件页面链接
         * */
         [
-            // "archive",
-            path.resolve(__dirname, "../../Aurora-plugin/vuepress-plugin-archive/lib/node/index.js"),
+            "vuepress-plugin-archive",
+            // path.resolve(__dirname, "../../Aurora-plugin/vuepress-plugin-archive/lib/node/index.js"),
             {
                 excludes: ['/footer.html','/404.html','/about/','/mood/','/link/','/tag/','/photo/'],
                 noTitle: '暂时没有标题配置'
@@ -72,18 +72,17 @@ module.exports = {
         * 音乐插件，使用：https://aurora.xcye.xyz/plugin/player/
         * */
         [
-            // "player",
-            path.resolve(__dirname, "../../Aurora-plugin/vuepress-plugin-player/lib/node/index.js"),
-
+            // path.resolve(__dirname, "../../Aurora-plugin/vuepress-plugin-player/lib/node/index.js"),
+            "vuepress-plugin-player",
             {
-                disableSpace: false,
+                // disableSpace: false,
                 //网易云单个歌单id
                 songIds: ['29723011','1887893189','1421069053'],
                 //网易云歌单
                 playlist: '7082462754',
-                showPlaylist: false,
+                showPlaylist: true,
                 //是否禁用网易云音乐，如果你选择禁用，那么就将使用本地的歌曲，请传入链接
-                disabledNetEaseMusic: false,
+                disabledNetEaseMusic: true,
 
                 //请求接口的baseURL
                 serverUrl: 'https://netease-cloud-music-api-teal-psi.vercel.app/',
@@ -93,14 +92,24 @@ module.exports = {
                     coverUrl: '/avatar.jpg',
                     songs: [
                         {
-                            path: '请自己传入mp3或者其他格式的音乐地址',
+                            path: '/song/1.mp3',
                             songName: '12',
                             cover: 'https://p1.music.126.net/Rg1x9LeUacIDqtvUzL35Cw==/109951163688517312.jpg'
                         },
+                        // {
+                        //     path: 'http://m7.music.126.net/20211120155029/f99e2fe5f557455fd37b7bfd0c0d6c3e/ymusic/545a/005e/025f/c03ab3077e74b9d50e07557d82ca472b.flac',
+                        //     songName: '23',
+                        //     cover: 'https://p2.music.126.net/8mnn6YiQldsRIHe_nER8wg==/109951162894925733.jpg'
+                        // },
+
                         {
-                            path: 'song/aa.mp3',//此地址是一个演示
-                            songName: '演示'
-                        }
+                            path: '/song/2.mp3',
+                            songName: 'sdf'
+                        },
+                        {
+                            path: '/song/3.mp3',
+                            songName: '34'
+                        },
                     ]
                 }
             }
@@ -110,9 +119,8 @@ module.exports = {
         * 气泡插件，使用：https://aurora.xcye.xyz/plugin/bubble/
         * */
         [
-            // "bubble",
-            path.resolve(__dirname, "../../Aurora-plugin/vuepress-plugin-bubble/lib/node/index.js"),
-
+            "vuepress-plugin-bubble",
+            // path.resolve(__dirname, "../../Aurora-plugin/vuepress-plugin-bubble/lib/node/index.js"),
             {
                 //气泡数量 推荐0(不包括)到1之前的小数，
                 bubbleNumber: 0.14,
@@ -176,11 +184,11 @@ module.exports = {
         ]*/
     ],
     //这里使用本地主题
-    theme: path.resolve(__dirname, "../../Aurora-theme/lib/node/index.js"),
-    // theme: 'aurora',
+    // theme: path.resolve(__dirname, "../../Aurora-theme/lib/node/index.js"),
+    theme: 'aurora',
 
     //站点title
-    title: "Patrick Stars",
+    title: "I do not follow,i lives is always all you want",
 
     //设置站点语言
     lang: 'zh-CN',
@@ -240,7 +248,7 @@ module.exports = {
         logoColor: "#2c3e50",
 
         //样式控制面板字体占位符，如果是国内用户，请使用中文
-        showFont: "王",
+        showFont: "程",
 
         //首页中间hero图片地址
         heroImg: '/avatar.jpg',
@@ -264,7 +272,7 @@ module.exports = {
         socials: socials,
 
         //logo旁文字 默认值为Aurora
-        logoTitle: "vuepress",
+        logoTitle: "Aurora",
 
         //貌似没用的配置项┭┮﹏┭┮
         headTitle: "this is headTitle",
@@ -286,9 +294,36 @@ module.exports = {
         * */
         about: [
             {
+                bgImg: "/bg/about.jpg",
                 bar: false,
                 title: "我?",
                 describe: [
+                    "这是关于页面支持html<a href='https://blog.cco.vin' target='_blank'>这是一个标签</a>",
+                    "目前是一名大三学生,CS专业,坐标西南边陲",
+                    "喜欢安静,不喜社交",
+                    "喜欢听音乐,什么类型都可",
+                    "喜欢技术,coding",
+                    "目前正在学习java后端",
+                    '最喜欢的电影是"忠犬八公的故事",梦想以后独居也能有一只"Hachi"',
+                    "主题是我自己开发的，前端太菜了，如果有bug，希望大家多多包涵`Σ(￣□￣||)` ",
+                    "有点懒",
+                    "目前除了编程没有什么兴趣爱好",
+                    "正在追的番有《百妖谱》,《致不灭的你》,《少年歌行》,《鬼灭之刃》,《关于我转生变成史莱姆这档事》...",
+                    "喜欢小说，喜欢的作者是--十月流年，最喜欢的小说《至尊修罗》,《一念永恒》,《星辰变》",
+
+                    "这是关于页面支持html<a href='https://blog.cco.vin' target='_blank'>这是一个标签</a>",
+                    "目前是一名大三学生,CS专业,坐标西南边陲",
+                    "喜欢安静,不喜社交",
+                    "喜欢听音乐,什么类型都可",
+                    "喜欢技术,coding",
+                    "目前正在学习java后端",
+                    '最喜欢的电影是"忠犬八公的故事",梦想以后独居也能有一只"Hachi"',
+                    "主题是我自己开发的，前端太菜了，如果有bug，希望大家多多包涵`Σ(￣□￣||)` ",
+                    "有点懒",
+                    "目前除了编程没有什么兴趣爱好",
+                    "正在追的番有《百妖谱》,《致不灭的你》,《少年歌行》,《鬼灭之刃》,《关于我转生变成史莱姆这档事》...",
+                    "喜欢小说，喜欢的作者是--十月流年，最喜欢的小说《至尊修罗》,《一念永恒》,《星辰变》",
+
                     "这是关于页面支持html<a href='https://blog.cco.vin' target='_blank'>这是一个标签</a>",
                     "目前是一名大三学生,CS专业,坐标西南边陲",
                     "喜欢安静,不喜社交",
@@ -316,6 +351,7 @@ module.exports = {
                 showTag: true,
             },
             {
+                bgImg: '/bg/1.jpg',
                 bar: false,
                 title: "大三规划",
                 describe: [
@@ -338,6 +374,7 @@ module.exports = {
                 showTag: true,
             },
             {
+                bgImg: '/bg/3.jpg',
                 bar: true,
                 title: "技  能",
                 describe: [
@@ -390,6 +427,7 @@ module.exports = {
             },
 
             {
+                bgImg: 'https://pica.zhimg.com/80/v2-879728aa9d88d75de8ffe375c123de74_720w.jpg',
                 showTag: false,
                 bar: true,
                 title: "掌握框架",
@@ -421,6 +459,7 @@ module.exports = {
                 ],
             },
             {
+                bgImg: 'http://localhost:8080/bg/763311.jpg',
                 bar: true,
                 showTag: false,
                 title: "掌握技能",
@@ -612,7 +651,7 @@ module.exports = {
         //自定义顶部图片
         customTopImg: {
             //是否启用定制顶部图片，控制全局，如果关闭，那么将使用随机图片，随机图片接口可以自己设置
-            custom: false,
+            custom: true,
 
             //文章顶部图片，数组，每次从数组中随机选择一张
             page: [
@@ -637,14 +676,33 @@ module.exports = {
 
         //首页背景图片数组，考虑到使用随机图片，打开网站速度变慢，所以移除随机图片，使用自己设置的图片链接
         homeWps: [
-            "/bg/1.png",
-            '/bg/4.png',
+            "/bg/404901.png",
+            "/bg/734386.png",
+            "/bg/5332.png",
+            '/bg/2.jpg',
+            '/bg/3.jpg',
+            '/bg/4.jpg',
+            '/bg/5.jpg',
+
+            "https://w.wallhaven.cc/full/v9/wallhaven-v9v3r5.jpg",
+            "https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png",
+            "https://w.wallhaven.cc/full/6o/wallhaven-6op786.jpg",
+            "https://w.wallhaven.cc/full/8o/wallhaven-8oky1j.jpg",
+            "https://w.wallhaven.cc/full/pk/wallhaven-pkvw9p.jpg",
+            "https://w.wallhaven.cc/full/9m/wallhaven-9m7kwd.png"
         ],
+        /* homeWps: [
+             '/bg/1.jpg',
+             '/bg/2.jpg',
+             '/bg/3.jpg',
+             '/bg/4.jpg',
+             '/bg/5.jpg',
+         ],*/
 
         //手机端首页背景图片
         homeWpsMobile: [
-            "/bg/1.png",
-            '/bg/4.png',
+            '/bg/4.jpg',
+            '/bg/5.jpg',
         ],
 
         //首页文章显示条数，默认为4，此值不推荐设置太大
@@ -811,13 +869,13 @@ module.exports = {
        * 如果你以前使用的是其他的主题，比如hexo，reco等等，发现frontmatter中的类别并不是使用categories字段，而是使用比如category进行设置的
        * 那么你可以像customCategoriesName: "category"这样自定义类别的字段，此配置仅仅针对于md文件设置的类别并不是使用categories字段，请注意，谨慎使用
        * */
-        //customCategoriesName: "category",
+        //customCategoriesName: "category"
 
         /*
         * 下面这个是v1.13版本新增的配置项
         * */
 
         //是否显示关于页面气泡效果 默认开启
-        showAboutPageBubble: true,
+        showAboutPageBubble: false
     }
 };

@@ -30,7 +30,7 @@ module.exports = {
             },
             {
                 name: "全味奶茶",
-                img: "/aurora/image-20210911233612031.png?",
+                img: "/aurora/image-20210911233612031.png",
                 price: 11,
                 prefix: "￥",
             },
