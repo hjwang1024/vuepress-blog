@@ -9,3 +9,4 @@
 # /package-lock.json
 /Aurora-plugin/**/.git
 /Aurora-plugin/**/node_modules
+.vercel
