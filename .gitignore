@@ -6,7 +6,7 @@
 /docs/.vuepress/.temp
 /**/.temp
 /deploy.sh
-# /package-lock.json
+/package-lock.json
 /Aurora-plugin/**/.git
 /Aurora-plugin/**/node_modules
 .vercel
